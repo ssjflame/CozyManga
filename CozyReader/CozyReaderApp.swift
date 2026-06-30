@@ -11,7 +11,7 @@ import SwiftUI
 struct CozyReaderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

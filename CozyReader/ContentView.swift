@@ -28,17 +28,7 @@ struct HomeView: View {
                             .font(Font.largeTitle.bold())
                             .foregroundStyle(Color("Text"))
                             
-                        ScrollView{
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            
-                            
-                        }
+                      
                     }
                     .background{
                         LinearGradient(colors:

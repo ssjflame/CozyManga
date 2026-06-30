@@ -23,16 +23,12 @@ struct HomeView: View {
             TabView{
                 Tab("", systemImage: "house"){
                     VStack{
-                      
-                        ScrollView{
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
-                            homeCardGen()
+                        Text("Home")
+                            .shadow(radius: 1, y: 4)
+                            .font(Font.largeTitle.bold())
+                            .foregroundStyle(Color("Text"))
                             
+                        
                             
                         }
                     }

@@ -27,9 +27,16 @@ struct HomeView: View {
                             .shadow(radius: 1, y: 4)
                             .font(Font.largeTitle.bold())
                             .foregroundStyle(Color("Text"))
-                            
-                        
-                            
+
+                        ScrollView{
+                            homeCardGen()
+                            homeCardGen()
+                            homeCardGen()
+                            homeCardGen()
+                            homeCardGen()
+                            homeCardGen()
+                            homeCardGen()
+         
                         }
                     }
                     .background{

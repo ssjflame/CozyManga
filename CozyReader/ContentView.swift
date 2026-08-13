@@ -44,7 +44,7 @@ struct RelationshipAttributes: Decodable{
 
 func fetchManga() async throws -> [Manga] {
     guard let url = URL(
-        string: "https://api.mangadex.org/manga?title=berserk&limit=100&includes[]=cover_art"
+        string: "https://api.mangadex.org/manga?title=poo&limit=100&includes[]=cover_art"
     ) else {
         return []
     }
@@ -98,28 +98,45 @@ struct HomeView: View {
                         .underline(true, color: Color("Text"))
                 
                     ScrollView {
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()) ], spacing: 15){
                         ForEach(mangaResults) { manga in
                             
                             if let englishTitle = manga.attributes.title["en"]{
                                 
-                                VStack {
-                                    AsyncImage(url: manga.coverURL){ image in
-                                        image
-                                            .resizable()
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                                            .overlay{
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .stroke(.ultraThinMaterial.opacity(0.45), lineWidth: 5)
-                                            }
-                                            
-                                            .scaledToFit()
-                                            .frame(width:150, height:150)
-                                    } placeholder: {
-                                        ProgressView()
-                                    }
+                                Button{
                                     
-                                    Text(englishTitle)
+                                }label:{
+                                    
+                                    VStack(alignment: .center){
+                                        
+                                        AsyncImage(url: manga.coverURL){ image in
+                                            image
+                                                .resizable()
+                                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                                .overlay{
+                                                    RoundedRectangle(cornerRadius: 10)
+                                                        .stroke(.ultraThinMaterial.opacity(0.45), lineWidth: 5)
+                                                }
+                                                .frame(width:120, height:180)
+                                                .scaledToFill()
+                                               
+                                            
+                                            
+                                        } placeholder: {
+                                            ProgressView()
+                                        }
+                                        
+                                        Text(englishTitle)
+                                            .frame(width:60, height:150)
+                                        
+                                    }
+                                    .frame(width:120, height:280)
+                                    
+                                    // WAS WORKING HERE TRYING TO MAKE SURE THE GRID OBJECTS DONT OVERLAP
                                 }
+                                
+                            }
+                            
                             }
                         }
                     }

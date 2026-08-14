@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		710E9200302F73BF00D88776 /* CozyReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710E91FC302F73BF00D88776 /* CozyReaderApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		710E91FC302F73BF00D88776 /* CozyReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CozyReaderApp.swift; sourceTree = "<group>"; };
 		717F18562FE8B0720075BFDA /* CozyReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozyReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -33,6 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				717F18582FE8B0720075BFDA /* CozyReader */,
+				710E91FC302F73BF00D88776 /* CozyReaderApp.swift */,
 				717F18572FE8B0720075BFDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710E9200302F73BF00D88776 /* CozyReaderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

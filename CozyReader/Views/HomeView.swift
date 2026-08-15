@@ -21,13 +21,20 @@ struct HomeView: View {
                     ScrollView {
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()) ], spacing: 15){
                             
-                            ForEach(viewModel.mangaResults) { manga in
-                                    if let mangaTitle = manga.attributes.title["en"] {
-                                        MangaCardView(
-                                            manga: manga,
-                                            mangaTitle: mangaTitle
-                                        )
+                            ForEach(viewModel.displayableManga) { manga in
+                                if let mangaTitle = manga.attributes.title["en"] {
+                                    MangaCardView(
+                                        manga: manga,
+                                        mangaTitle: mangaTitle
+                                    )
+                                    .task{
+                                        if manga.id == viewModel.displayableManga.last?.id{
+                                            await viewModel.loadManga()
+                                        }
                                     }
+                                    
+                                    
+                                }
                                 }
                             }
                     }

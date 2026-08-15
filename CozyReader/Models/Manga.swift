@@ -16,7 +16,6 @@ struct Manga: Decodable, Identifiable {
         else{return nil}
         
         return URL(string: "https://uploads.mangadex.org/covers/\(id)/\(coverFileName).256.jpg")
-        
     }
     
     private func getCoverFileName() -> String? {
@@ -28,6 +27,9 @@ struct Manga: Decodable, Identifiable {
 
         return coverRelationship.attributes?.fileName
     }
+    
+   
+    
     
     
 }
@@ -44,6 +46,7 @@ struct Relationship: Decodable {
 
 struct RelationshipAttributes: Decodable{
     let fileName: String?
+    let chapter: String?
 }
 
 
